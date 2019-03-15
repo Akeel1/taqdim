@@ -5,19 +5,19 @@ const prefix = "#"
 
 client.on('ready', ready => {
   console.log('ready')
-  client.user.setStatus('dnd', 'Alpha Bots!')
-  client.user.setGame('Alpha Bots!')
+  client.user.setStatus('dnd', 'Abot')
+  client.user.setGame('#تقديم')
 })
 
 client.on('message',async message => {
     if(message.content.startsWith(prefix + "تقديم")) {
   if(!message.channel.guild) return message.reply(' ');
-    let acapply = message.guild.channels.find(`name`, "تقديمات");
+    let acapply = message.guild.channels.find(`name`, "التقديمات");
     if(!acapply) return message.channel.send(":x: لم اجد روم التقديمات");
       let filter = m => m.author.id === message.author.id;
       let botname;
       let thisFalse;
-      message.channel.send(':pencil: **| من فضلك اكتب أسم بوتك الأن... :pencil2: **').then(msg => {
+      message.channel.send(':pencil: **| من فضلك اكتب اسمك وعمرك وبلدك... :pencil2: **').then(msg => {
   
       message.channel.awaitMessages(filter, {
         max: 1,
@@ -28,7 +28,7 @@ client.on('message',async message => {
         collected.first().delete();
         botname = collected.first().content;
         let id;
-        msg.edit(':scroll: **| من فضلك اكتب اي دي بوتك الأن... :pencil2: **').then(msg => {
+        msg.edit(':scroll: **|كم ساعة تتفاعل في اليوم ؟... :pencil2: **').then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -43,7 +43,7 @@ client.on('message',async message => {
 
 
               let prefix;
-        msg.edit(`:scroll: **| من فضلك اكتب بريفكس بوتك الأن :pencil2:**`).then(msg => {
+        msg.edit(`:scroll: **| ماذا تعرف عن ادارة سيرفرات البوتات  :pencil2:**`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -57,12 +57,7 @@ client.on('message',async message => {
 
 
         let lib;
-        msg.edit(`:scroll: **| من فضلك اكتب المكتبة واللغة التي يستخدمها بوتك الأن :pencil2:
-مثال :**
-\`المكتبة | اللغة\`
-\`JS | discord.js\`
-\`JS | eris\`
-\`PY | discord.py\``).then(msg => {
+        msg.edit(`:scroll: **|لو شخص طلب بريموم بتكلم مين  :pencil2:
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -73,7 +68,7 @@ client.on('message',async message => {
               collected.first().delete();
               lib = collected.first().content;
               let sucount;
-        msg.edit(`:scroll: **| من فضلك اكتب عدد سيرفرات ومستخدمين بوتك الأن :pencil2:
+        msg.edit(`:scroll: **| تحس نفسك قد الادارة ؟ :pencil2:
 مثال :**
 \`5 servers | 100 users\``).then(msg => {
   
@@ -89,7 +84,7 @@ client.on('message',async message => {
 
 
               let website;
-        msg.edit(`:scroll: **| من فضلك اكتب موقع بوتك الأن اذا لم يوجد اكتب \`لا يوجد\`** :pencil2:`).then(msg => {
+        msg.edit(`:scroll: **| تكلم عن نفسك برطيقة حلوة واذكر صفاتك المميزة `** :pencil2:`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -102,7 +97,7 @@ client.on('message',async message => {
 
 
               let shortdesc;
-              msg.edit(':man_in_tuxedo: **| من فضلك اكتب نبذة مختصرة عن بوتك الأن... :pencil2: **').then(msg => {
+              msg.edit(':man_in_tuxedo: **|  :pencil2: **').then(msg => {
   
                 message.channel.awaitMessages(filter, {
                   max: 1,
@@ -117,7 +112,7 @@ client.on('message',async message => {
 
 
                 let longdesc;
-        msg.edit(`:scroll: **| من فضلك اكتب مواصفات ومميزات بوتك الأن :pencil2:**`).then(msg => {
+        msg.edit(`:scroll: **|لو صرت ستاف بل سيرفر بتغدر او تساعد اخوياك برشاوي ؟ :pencil2:**`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -129,7 +124,7 @@ client.on('message',async message => {
               longdesc = collected.first().content;
 
 
-        msg.edit(':shield: **| [ هل قرأت شروط التقديم؟ للموافقة على الشروط اكتب [ نعم ] او [ لا**');
+        msg.edit(':shield: **| [ اذا موافق على التقديم اكتب[ نعم ] او [ لا**');
    message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
           max: 1,
           time: 90000,
@@ -151,19 +146,19 @@ client.on('message',async message => {
         .setThumbnail(message.author.avatarURL)
         .setTitle('تقديم جديد :')
         .setDescription(`
-**# - اسم البوت** : 
+**# - اسم الشخص والعمر والبلد** : 
 \`${botname}\`
-**# - اي دي البوت** :
+**# - ساعات التفاعل** :
 \`${id}\`
-**# - بريفكس البوت** :
+**# - معلومات عن ستاف سيرفرات البوتات** :
 \`${prefix}\`
-**# - لغة ومكتبة البوت** : 
+**# -لو شخص طلب بريموم بتكلم مين** : 
 \`${lib}\`
-**# - نبذة مختصرة عن البوت** :
+**# - تحس نفسك قد الادارة؟** :
 \`${shortdesc}\`
-**# - الموقع البوت** :
+**# - C.V** :
 \`${website}\`
-**# - عدد السيرفرات والمستخدمين** :
+**# - لو صرات ستاف بتغدر وتساعد اخوياك بل رشاوي ؟** :
 \`${sucount}\`
 `)
 .addField('مواصفات البوت :', longdesc)
