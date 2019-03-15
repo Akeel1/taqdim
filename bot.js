@@ -54,20 +54,8 @@ client.on('message',async message => {
               collected.first().delete();
               prefix = collected.first().content;
 
+   
 
-
-        let lib;
-        msg.edit(`:scroll: **|لو شخص طلب بريموم بتكلم مين  :pencil2:
-  
-            message.channel.awaitMessages(filter, {
-              max: 1,
-              time: 90000,
-              errors: ['time']
-            })
-            .then(collected => {
-              collected.first().delete();
-              lib = collected.first().content;
-              let sucount;
         msg.edit(`:scroll: **| تحس نفسك قد الادارة ؟ :pencil2:
 مثال :**
 \`5 servers | 100 users\``).then(msg => {
@@ -152,8 +140,6 @@ client.on('message',async message => {
 \`${id}\`
 **# - معلومات عن ستاف سيرفرات البوتات** :
 \`${prefix}\`
-**# -لو شخص طلب بريموم بتكلم مين** : 
-\`${lib}\`
 **# - تحس نفسك قد الادارة؟** :
 \`${shortdesc}\`
 **# - C.V** :
