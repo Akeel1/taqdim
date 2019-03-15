@@ -72,7 +72,7 @@ client.on('message',async message => {
 
 
               let website;
-        msg.edit(`:scroll: **| تكلم عن نفسك برطيقة حلوة واذكر صفاتك المميزة `** :pencil2:`).then(msg => {
+        msg.edit(`:scroll: **| تكلم عن نفسك برطيقة حلوة واذكر صفاتك المميزة ** :pencil2:`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
