@@ -151,20 +151,14 @@ client.on('message',async message => {
 .setFooter(message.author.username, message.author.avatarURL)
 .setTimestamp()     
 acapply.send(embed)
-          }
-        }
     );
 });
       });
-    }
       );
     });
-}
 );
 })
-}
       )
-      }
       )
     }
 })
