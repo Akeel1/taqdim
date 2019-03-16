@@ -5,7 +5,7 @@ const prefix = "#"
 
 client.on('ready', ready => {
   console.log('ready')
-  client.user.setStatus('dnd', 'Abot')
+  client.user.setStatus('dnd', 'Abot ')
   client.user.setGame('#تقديم')
 })
 
@@ -28,7 +28,7 @@ client.on('message',async message => {
         collected.first().delete();
         botname = collected.first().content;
         let id;
-        msg.edit(':scroll: **|كم ساعة تتفاعل في اليوم ؟... :pencil2: **').then(msg => {
+        msg.edit(':scroll: **|من فضلك امتب كم خبرتك في الديسكورد... :pencil2: **').then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -43,7 +43,7 @@ client.on('message',async message => {
 
 
               let prefix;
-        msg.edit(`:scroll: **| ماذا تعرف عن ادارة سيرفرات البوتات  :pencil2:**`).then(msg => {
+        msg.edit(`:scroll: **| ماذا تعرف عن ادارة سيرفرات البوتات ؟:pencil2:**`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -54,9 +54,25 @@ client.on('message',async message => {
               collected.first().delete();
               prefix = collected.first().content;
 
-   
 
-        msg.edit(`:scroll: **| تحس نفسك قد الادارة ؟ :pencil2:
+
+        let lib;
+        msg.edit(`:scroll: **| تعرف الاوامر الادارية ؟؟ اذا تعرفها عددها :pencil2:
+مثال :**
+\`الباند | ميوت\`
+\`الكيك \`
+\`بلاك ليست\``).then(msg => {
+  
+            message.channel.awaitMessages(filter, {
+              max: 1,
+              time: 90000,
+              errors: ['time']
+            })
+            .then(collected => {
+              collected.first().delete();
+              lib = collected.first().content;
+              let sucount;
+        msg.edit(`:scroll: **| لو احد طلب بريموم وش تقوله ؟:pencil2:
 مثال :**
 \`5 servers | 100 users\``).then(msg => {
   
@@ -72,7 +88,7 @@ client.on('message',async message => {
 
 
               let website;
-        msg.edit(`:scroll: **| تكلم عن نفسك برطيقة حلوة واذكر صفاتك المميزة ** :pencil2:`).then(msg => {
+        msg.edit(`:scroll: **|لو صرت ادارة بتغدر وتساعد اخوياك بل رشاوي ؟** :pencil2:`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -85,7 +101,7 @@ client.on('message',async message => {
 
 
               let shortdesc;
-              msg.edit(':man_in_tuxedo: **|  :pencil2: **').then(msg => {
+              msg.edit(':man_in_tuxedo: **| هل انت متاكد من تقديمك ؟... :pencil2: **').then(msg => {
   
                 message.channel.awaitMessages(filter, {
                   max: 1,
@@ -100,7 +116,7 @@ client.on('message',async message => {
 
 
                 let longdesc;
-        msg.edit(`:scroll: **|لو صرت ستاف بل سيرفر بتغدر او تساعد اخوياك برشاوي ؟ :pencil2:**`).then(msg => {
+        msg.edit(`:scroll: **|تكلم عن نفسك بطريقة مطولة :pencil2:**`).then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -112,7 +128,7 @@ client.on('message',async message => {
               longdesc = collected.first().content;
 
 
-        msg.edit(':shield: **| [ اذا موافق على التقديم اكتب[ نعم ] او [ لا**');
+        msg.edit(':shield: **| [ هل متأكد من تقديمك ؟ للموافقة على التقديم اكتب [ نعم ] او [ لا**');
    message.channel.awaitMessages(response => response.content === 'نعم' || 'لا' && filter,{
           max: 1,
           time: 90000,
@@ -134,22 +150,49 @@ client.on('message',async message => {
         .setThumbnail(message.author.avatarURL)
         .setTitle('تقديم جديد :')
         .setDescription(`
-**# - اسم الشخص والعمر والبلد** : 
+**# - المعلومات العامة** : 
 \`${botname}\`
-**# - ساعات التفاعل** :
+**# -الخبرة** :
 \`${id}\`
-**# - معلومات عن ستاف سيرفرات البوتات** :
+**# -معلومات عن الادارة ** :
 \`${prefix}\`
-**# - تحس نفسك قد الادارة؟** :
+**# -معلومات عن اوامر الادارة** : 
+\`${lib}\`
+**# - لو احد طلب بريموم ** :
 \`${shortdesc}\`
-**# - C.V** :
+**# - الغدر** :
 \`${website}\`
-**# - لو صرات ستاف بتغدر وتساعد اخوياك بل رشاوي ؟** :
+**# - التاكد من التقديم** :
 \`${sucount}\`
 `)
-.addField('مواصفات البوت :', longdesc)
+.addField('C.V :', longdesc)
 .setFooter(message.author.username, message.author.avatarURL)
 .setTimestamp()     
 acapply.send(embed)
+          }
+        }
+    );
+});
+      });
+    }
+      );
+    });
+}
+);
+})
+}
+      )
+      }
+      )
+    }
+)}
+      )}
+      )}
+      )}
+      )}
+      )}
+      )}
+      )}
+})
 
 client.login(process.env.BOT_TOKEN);
