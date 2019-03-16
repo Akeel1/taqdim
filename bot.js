@@ -28,7 +28,7 @@ client.on('message',async message => {
         collected.first().delete();
         botname = collected.first().content;
         let id;
-        msg.edit(':scroll: **|من فضلك امتب كم خبرتك في الديسكورد... :pencil2: **').then(msg => {
+        msg.edit(':scroll: **|من فضلك اكتب كم خبرتك في الديسكورد... :pencil2: **').then(msg => {
   
             message.channel.awaitMessages(filter, {
               max: 1,
@@ -74,8 +74,7 @@ client.on('message',async message => {
               let sucount;
         msg.edit(`:scroll: **| لو احد طلب بريموم وش تقوله ؟:pencil2:
 مثال :**
-\`5 servers | 100 users\``).then(msg => {
-  
+   
             message.channel.awaitMessages(filter, {
               max: 1,
               time: 90000,
