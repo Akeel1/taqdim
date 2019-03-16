@@ -74,7 +74,8 @@ client.on('message',async message => {
               let sucount;
         msg.edit(`:scroll: **| لو احد طلب بريموم وش تقوله ؟:pencil2:
 مثال :**
-   
+   \`5 servers | 100 users\``).then(msg => {
+
             message.channel.awaitMessages(filter, {
               max: 1,
               time: 90000,
@@ -87,8 +88,8 @@ client.on('message',async message => {
 
 
               let website;
-        msg.edit(`:scroll: **|لو صرت ادارة بتغدر وتساعد اخوياك بل رشاوي ؟** :pencil2:`).then(msg => {
-  
+msg.edit(`:scroll: **|لو صرت ادارة بتغدر وتساعد اخوياك بل رشاوي ؟** :pencil2:`).then(msg => {
+
             message.channel.awaitMessages(filter, {
               max: 1,
               time: 90000,
